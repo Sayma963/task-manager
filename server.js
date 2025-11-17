@@ -3,43 +3,13 @@ const taskRouter = require('./routes/tasks');
 
 const app = express();
 
-// ===== UPDATED: In-memory storage with 5 tasks =====
+// In-memory storage with 5 tasks
 const tasks = [
-  {
-    id: 1,
-    title: 'Buy groceries',
-    completed: false,
-    priority: 'low',
-    createdAt: new Date()
-  },
-  {
-    id: 2,
-    title: 'Complete assignment',
-    completed: false,
-    priority: 'high',
-    createdAt: new Date()
-  },
-  {
-    id: 3,
-    title: 'Read a book',
-    completed: true,
-    priority: 'medium',
-    createdAt: new Date()
-  },
-  {
-    id: 4,
-    title: 'Clean the room',
-    completed: false,
-    priority: 'low',
-    createdAt: new Date()
-  },
-  {
-    id: 5,
-    title: 'Prepare for exam',
-    completed: false,
-    priority: 'high',
-    createdAt: new Date()
-  }
+  { id: 1, title: 'Buy groceries', completed: false, priority: 'low', createdAt: new Date() },
+  { id: 2, title: 'Complete assignment', completed: false, priority: 'high', createdAt: new Date() },
+  { id: 3, title: 'Read a book', completed: true, priority: 'medium', createdAt: new Date() },
+  { id: 4, title: 'Clean the room', completed: false, priority: 'low', createdAt: new Date() },
+  { id: 5, title: 'Prepare for exam', completed: false, priority: 'high', createdAt: new Date() }
 ];
 
 app.locals.tasks = tasks;
@@ -52,7 +22,15 @@ app.get('/', (req, res) => {
   res.send("Task Management API is running");
 });
 
-// Mount task router
+// Health check route
+app.get('/health', (req, res) => {
+  res.json({
+    status: "healthy",
+    uptime: process.uptime()
+  });
+});
+
+// Mount tasks router
 app.use('/tasks', taskRouter);
 
 // Start server
