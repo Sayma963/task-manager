@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// GET /tasks/:id - Retrieve task by ID with error handling
+// GET /task/:id - Retrieve task by ID
 router.get('/:id', (req, res) => {
   const id = req.params.id;
 
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// POST /tasks - Create a new task
+// POST /tasks - Create new task
 router.post('/', (req, res) => {
   try {
     const { title, priority } = req.body;

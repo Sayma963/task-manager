@@ -1,0 +1,27 @@
+GET /tasks/1
+Status: 200
+Response:
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "title": "Buy groceries",
+    "completed": false,
+    "priority": "low",
+    "createdAt": "2025-02-20T10:15:30.000Z"
+  }
+}
+
+GET /tasks/999
+Status: 404
+Response:
+{
+  "error": "Task not found"
+}
+
+GET /tasks/abc
+Status: 400
+Response:
+{
+  "error": "Invalid ID format"
+}
