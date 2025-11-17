@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "completed": false,
+      "priority": "low",
+      "createdAt": "2025-02-20T10:15:30.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Complete assignment",
+      "completed": false,
+      "priority": "high",
+      "createdAt": "2025-02-20T10:15:30.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Read a book",
+      "completed": true,
+      "priority": "medium",
+      "createdAt": "2025-02-20T10:15:30.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Clean the room",
+      "completed": false,
+      "priority": "low",
+      "createdAt": "2025-02-20T10:15:30.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Prepare for exam",
+      "completed": false,
+      "priority": "high",
+      "createdAt": "2025-02-20T10:15:30.000Z"
+    }
+  ]
+}
